@@ -1,35 +1,46 @@
-#converter functions:
-def toBinary(x):
-        print(bin(x))
-        ask()
-def toOcta(x):
-        print(oct(x))
-        ask()
-def toHex(x):
-        print(hex(x))
-        ask()
-#recursive function:
+# convert functions:
+def to_binary(x):
+    print("Binary =", bin(x))
+    ask()
+
+
+def to_octa(x):
+    print("Octal =", oct(x))
+    ask()
+
+
+def to_hex(x):
+    print("Hexadecimal =", hex(x))
+    ask()
+
+
+# recursive function:
 def ask():
-    answer=input("again? [Y/N]")
-    if answer=="y":
+    answer = int(input("Go Again?\n0)No\n1)Yes\n"))
+    if answer == 1:
         main()
-    elif answer=="n":
+    elif answer == 0:
         return 0
     else:
-        print("ERROR! Please do Enter 'y' or 'n' as an input.")
+        print("ERROR! Please use '1' or '0' as an input.")
         ask()
-#main input funciton:
+
+
+# main input function:
 def main():
-    Input=int(input("Please enter a number:"))
-    option=input("to Binary? to Octa? or to Hexa?")
-    if option=="binary":
-        toBinary(Input)
-    elif option=="octa":
-        toOcta(Input)
-    elif option=="hexa":
-        toHex(Input)
+    option = int(input("To which base should it be convert? to...\n1)Binary\n2)Octal\n3)Hexadecimal\n"))
+    if option == 1:
+        to_binary(Input)
+    elif option == 2:
+        to_octa(Input)
+    elif option == 3:
+        to_hex(Input)
     else:
-        print("ERROR! Please type in binary , octa or hexa...")
+        print("ERROR! Please type in the appropriate Number according to the selections below:\n")
         main()
-#how to start the program:
+
+
+# how to start the program:
+Input = int(input("Please provide a number:\t"))
 main()
+
